@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Compile flags
+cflags="-g -fsanitize=address -fno-omit-frame-pointer -fstack-protector"
+ldflags="-fsanitize=address"
+
 # Download sqlite source amalgamation
 if ! which wget > /dev/null; then
 	echo "wget not found, install wget and try again"
@@ -13,7 +17,8 @@ tar -x --file=sqlite-autoconf-3410200.tar.gz || {
 	exit 1
 }
 
-# Compile with debug symbols
+# Compile with debug symbols and address sanitizer
 cd sqlite-autoconf-3410200
-./configure CFLAGS="-g" --enable-debug
+./configure CFLAGS="$cflags" LDFLAGS="$ldflags" --enable-debug
 make
+
