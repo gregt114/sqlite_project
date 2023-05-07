@@ -1,0 +1,5 @@
+Static analysis has not been helpful in finding bugs in SQLite. Static analysis has found a few bugs in SQLite,
+but those are the exceptions. More bugs have been introduced into SQLite while trying to get it to compile without warnings
+than have been found by static analysis.
+
+- From the SQLite website

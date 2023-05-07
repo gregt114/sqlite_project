@@ -17,6 +17,10 @@
 
 ## Todo
 - Create better corpus (more examples, longer, more varied queries)
+    - Random SQL statement generation with SQLsmith
+    - Custom made generator
 - Some type of static analysis
     - Joern?
     - Source/sink analysis?
+- Compare memory db fuzzing to db file fuzzing
+- Run fuzzer for ~2hrs
