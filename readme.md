@@ -24,6 +24,12 @@
     - This will make one extra file that contains the remaining queries in the file called `query<desired number of queries + 1>`. This can be safely deleted.
     - Once you have the queries copy them into a corpus folder and run the AFL fuzzer with the provided `sqlsmith_harness`.
 
+## Corpus Generation
+   - Pip install corpus_generation.py requirements
+   - First iteration of corpus generation creates more structured random files, specifically JPEGs, PDFs, and strictly null-byte buffers to be used with the blob harness.
+   - Future generations will include more random mutations such as strictly escape character files, etc.
+   - Need to resize blob harness buffer size to account for larger files such as the PDFs.
+
 ## Todo
 - Create better corpus (more examples, longer, more varied queries)
     - Random SQL statement generation with SQLsmith
