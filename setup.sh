@@ -27,4 +27,12 @@ fi
 cd sqlite-autoconf-3410200
 ./configure CFLAGS="$cflags" LDFLAGS="$ldflags" --enable-debug CC=/usr/local/bin/afl-gcc CXX=/usr/local/bin/afl-g++
 make
+cd ..
 
+# Download sqlsmith, NB don't use the debian version, it is outdated
+git clone https://github.com/anse1/sqlsmith.git
+cd sqlsmith
+autoreconf -i
+./configure
+make
+cd ..
